@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TikTok connected</title><link rel="stylesheet" href="style.css"></head><body><main>
+<h1>Almost done</h1>
+<div class="card"><p id="msg">Copy this whole page address and paste it into the connect page on your Mac.</p>
+<p><code id="url"></code></p></div>
+<script>
+  var p = new URLSearchParams(location.search);
+  document.getElementById("url").textContent = location.href;
+  if (p.get("error")) document.getElementById("msg").textContent = "TikTok said: " + (p.get("error_description") || p.get("error"));
+</script>
+</main></body></html>
